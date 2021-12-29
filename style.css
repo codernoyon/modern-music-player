@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+
+}
+
+body{
+    min-height: 100vh;
+    background: #1c2833;
+    display: grid;
+    place-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.main{
+    position: relative;
+    width: 400px;
+    height: 550px;
+    background: #56655673;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.main .top_bar .options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-70px);
+    transition: 0.5s;
+}
+
+.main .top_bar .options.active{
+    transform: translateY(0px);
+}
+
+.main .top_bar .options button{
+    margin: 0 10px;
+    height: 40px;
+    width: 40px;
+    font-size: 18px;
+}
+
+.main .top_bar{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main .top_bar button{
+    z-index: 20;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.08);
+    box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+
+.main .top_bar button:hover, .main .control_part .control_buttons .main_btns button:hover{
+     background: linear-gradient(to right, #ff5722, #ff7043);
+     box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2) inset, 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2) ;
+     
+}
+
+.main .playing_part{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+}
+
+.main .playing_part .img{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.main .playing_part .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* contronl part */
+
+.main .control_part{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main .control_part .song_title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .control_part .song_title p{
+    font-size: 14px;
+}
+
+.main .control_part .song_title p:first-child{
+    font-size: 22px;
+    text-transform: capitalize;
+}
+
+.main .control_part .control_buttons{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.main .control_part .control_buttons .main_btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+
+.main .control_part .control_buttons .main_btns button{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.08);
+    box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin: 0px 10px ;
+}
+
+.main .control_part .control_buttons .main_btns #play_btn{
+    background: linear-gradient(to right, #ff5722, #ff7043);
+    box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2) inset, 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2) ;
+}
+
+/* song palylist */
+
+.playlist{
+    z-index: 10;
+    position: absolute;
+    bottom: -550px;
+    width: 100%;
+    height: 100%;
+    background: #596977;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 0px;
+    transition: 0.5s;
+}
+
+.playlist.active{
+    bottom: 0px;
+    z-index: 10;
+}
+
+
+
+.playlist .p_song{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 12px 20px 12px;
+    box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.playlist .p_song button{
+    background: linear-gradient(to right, #ff5722, #ff7043);
+    box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2) inset, 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2) ;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+
+/* range slider */
+
+.range_slider{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.range_slider input[type='range']{
+    height: 3px;
+    width: 95%;
+    color: #ff5722;
+    justify-self: flex-start;
+    margin-right: 5px;
+}
